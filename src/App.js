@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaSearch } from 'react-icons/fa'; // Importa el icono de búsqueda
 import { FaCog, FaUser } from 'react-icons/fa'; // Importa los iconos necesarios
 import pigLogo from './pig-logo.png';
 import './App.css';
@@ -9,7 +10,6 @@ function App() {
       <header className="App-header">
         <div className="App-header-container">
           <div className="App-logo-container">
-            {/* Agrega espacio entre el logo y el texto */}
             <img src={pigLogo} className="App-logo" alt="logo" />
             <h1 className="App-title">Chanchito</h1>
           </div>
@@ -23,6 +23,13 @@ function App() {
           </div>
         </div>
       </header>
+
+      <div className="App-search-bar">
+        <input type="text" placeholder="Buscar" />
+        <button className="App-search-button">
+          <FaSearch />
+        </button>
+      </div>
 
       <main className="App-main">
         <section className="App-section">
