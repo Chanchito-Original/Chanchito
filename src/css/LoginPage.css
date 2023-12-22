@@ -11,6 +11,7 @@
     width: 150px; /* Ajusta el tamaño del logo según tu preferencia */
     height: 150px;
     margin-bottom: 20px; /* Espacio entre el logo y los campos de texto */
+    margin-right: 4.9cm;
   }
   
   .login-form {
