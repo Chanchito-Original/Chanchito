@@ -2,7 +2,7 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa'; // Importa el icono de búsqueda
 import { FaCog, FaUser } from 'react-icons/fa'; // Importa los iconos necesarios
 import pigLogo from './img/pig-logo.png';
-import './App.css';
+import './css/App.css';
 
 function App() {
   return (

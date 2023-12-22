@@ -1,5 +1,5 @@
 import React from 'react';
-import './RegisterPage.css'; // Importa el nuevo CSS para estilos
+import './css/RegisterPage.css'; // Importa el nuevo CSS para estilos
 import pigLogo from './img/pig-logo.png'; // Importa la imagen del logo de cerdito
 
 // Componente de la página de registro

@@ -1,6 +1,6 @@
 // Importa las bibliotecas de React y CSS
 import React, { useState } from 'react';
-import './LoginPage.css'; // Importa el CSS para estilos
+import './css/LoginPage.css'; // Importa el CSS para estilos
 import pigLogo from './img/pig-logo.png'; // Importa la imagen del logo de cerdito
 
 // Componente de la página de inicio de sesión
