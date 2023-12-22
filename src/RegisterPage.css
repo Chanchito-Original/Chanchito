@@ -1,0 +1,77 @@
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5e1da; /* Color de fondo pastel agradable */
+  }
+  
+  .logo {
+    width: 150px; /* Ajusta el tamaño del logo según tu preferencia */
+    height: 150px;
+    margin-bottom: 20px; /* Espacio entre el logo y los campos de texto */
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff; /* Fondo blanco del formulario */
+    padding: 20px;
+    border-radius: 10px; /* Borde redondeado del formulario */
+    margin-top: 20px; /* Espacio entre el logo y el formulario */
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  .rounded-input {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc; /* Borde del campo de texto */
+    border-radius: 25px; /* Campo de texto más redondo */
+    transition: border-color 0.3s; /* Transición para cambiar el color del borde */
+  }
+  
+  .rounded-input:focus {
+    border-color: #ff6b6b; /* Color del borde al enfocar el campo de texto */
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.5); /* Sombra al enfocar */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 15px; /* Espacio entre el formulario y los botones */
+  }
+  
+  .login-button,
+  .register-button,
+  .forgot-password-button {
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 10px; /* Espacio horizontal entre los botones */
+  }
+  
+  .login-button {
+    background-color: #f9a3a4; /* Color de fondo */
+    color: #fff; /* Color del texto */
+  }
+  
+  .register-button {
+    background-color: #f9a3a4; /* Color de fondo */
+    color: #fff; /* Color del texto */
+  }
+  
+  .forgot-password-button {
+    color: #ff6b6b; /* Color del texto */
+  }
+  
+  .login-button:hover,
+  .register-button:hover {
+    background-color: #f7cacb; /* Color de fondo al pasar el ratón */
+  }
+  

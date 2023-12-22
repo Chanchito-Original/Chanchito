@@ -1,24 +1,69 @@
-import React from 'react';
-import { FaUser } from 'react-icons/fa'; // Importa el icono de usuario
-import './LoginPage.css';
+// Importa las bibliotecas de React y CSS
+import React, { useState } from 'react';
+import './LoginPage.css'; // Importa el CSS para estilos
+import pigLogo from './img/pig-logo.png'; // Importa la imagen del logo de cerdito
 
+// Componente de la página de inicio de sesión
 function LoginPage() {
+  // Estado para manejar el enfoque de los campos de entrada
+  const [focusedInput, setFocusedInput] = useState(null);
+
+  // Función de manejo de clic para el botón de inicio de sesión
+  const handleLoginClick = () => {
+    // Obtener referencias a los elementos del formulario
+    const emailUsuarioInput = document.getElementById('emailUsuario');
+    const passwordInput = document.getElementById('password');
+
+    // Obtener valores de los campos de entrada
+    const emailUsuario = emailUsuarioInput.value;
+    const password = passwordInput.value;
+
+    // Realizar acciones de inicio de sesión (puedes reemplazar con tu lógica)
+    console.log('Email/Usuario:', emailUsuario);
+    console.log('Contraseña:', password);
+  };
+
+  // Función de manejo de foco para los campos de entrada
+  const handleFocus = (inputId) => {
+    setFocusedInput(inputId);
+  };
+
+  // Renderizar el componente de la página de inicio de sesión
   return (
-    <div className="LoginPage">
-      <div className="Login-container">
-        <h1 className="Login-title">Iniciar Sesión</h1>
-        <div className="Login-input-container">
-          <FaUser className="Login-user-icon" />
-          <input type="text" placeholder="Usuario" />
+    <div className="login-container">
+      <img src={pigLogo} alt="Logo de cerdito" className="logo" />
+      <form className="login-form">
+        <label htmlFor="emailUsuario">Correo o Usuario:</label>
+        <input
+          type="text"
+          id="emailUsuario"
+          className={`rounded-input ${focusedInput === 'emailUsuario' ? 'focused' : ''}`}
+          onFocus={() => handleFocus('emailUsuario')}
+          onBlur={() => handleFocus(null)}
+        />
+        <label htmlFor="password">Contraseña:</label>
+        <input
+          type="password"
+          id="password"
+          className={`rounded-input ${focusedInput === 'password' ? 'focused' : ''}`}
+          onFocus={() => handleFocus('password')}
+          onBlur={() => handleFocus(null)}
+        />
+        <div className="button-container">
+          <button type="button" onClick={handleLoginClick} className="login-button">
+            Acceder
+          </button>
+          <button type="button" className="register-button">
+            Registrarme
+          </button>
         </div>
-        <div className="Login-input-container">
-          <FaUser className="Login-user-icon" />
-          <input type="password" placeholder="Contraseña" />
-        </div>
-        <button className="Login-button">Iniciar Sesión</button>
-      </div>
+        <button type="button" className="forgot-password-button">
+          ¿Olvidaste tu contraseña?
+        </button>
+      </form>
     </div>
   );
 }
 
+// Exporta el componente LoginPage
 export default LoginPage;
