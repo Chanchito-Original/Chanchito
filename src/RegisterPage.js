@@ -8,23 +8,34 @@ function RegisterPage() {
   const handleRegisterClick = () => {
     // Obtener referencias a los elementos del formulario de registro
     const nombreInput = document.getElementById('nombre');
+    const apellidoInput = document.getElementById('apellido');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
 
     // Obtener valores de los campos de entrada
     const nombre = nombreInput.value;
+    const apellido = apellidoInput.value;
     const email = emailInput.value;
     const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+
+    // Validar si las contraseñas coinciden
+    if (password !== confirmPassword) {
+      console.error('Las contraseñas no coinciden');
+      return;
+    }
 
     // Realizar acciones de registro (puedes reemplazar con tu lógica)
     console.log('Nombre:', nombre);
+    console.log('Apellido:', apellido);
     console.log('Email:', email);
     console.log('Contraseña:', password);
   };
 
   // Renderizar el componente de la página de registro
   return (
-    <section className="vh-100">
+    <section className="register-container vh-100">
       <div className="container h-100 d-flex justify-content-center align-items-center">
         <div className="col-md-8 col-lg-6 col-xl-16 offset-xl-1">
           <div className="card" style={{ width: '35rem' }}>
@@ -32,7 +43,7 @@ function RegisterPage() {
               <div className="text-center">
                 <img src={pigLogo} alt="Logo de cerdito" className="logo" />
               </div>
-              <form>
+              <form className="register-form">
                 <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                   <p className="lead fw-normal mb-0 me-3">Registro</p>
                 </div>
@@ -45,9 +56,16 @@ function RegisterPage() {
                     className="form-control form-control-lg rounded-input"
                     placeholder="Nombre"
                   />
-                  <label className="form-label" htmlFor="nombre">
-                    Nombre
-                  </label>
+                </div>
+
+                {/* Apellido input */}
+                <div className="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="apellido"
+                    className="form-control form-control-lg rounded-input"
+                    placeholder="Apellido"
+                  />
                 </div>
 
                 {/* Email input */}
@@ -58,22 +76,26 @@ function RegisterPage() {
                     className="form-control form-control-lg rounded-input"
                     placeholder="Email"
                   />
-                  <label className="form-label" htmlFor="email">
-                    Correo Electrónico
-                  </label>
                 </div>
 
                 {/* Password input */}
-                <div className="form-outline mb-3">
+                <div className="form-outline mb-4">
                   <input
                     type="password"
                     id="password"
                     className="form-control form-control-lg rounded-input"
                     placeholder="Contraseña"
                   />
-                  <label className="form-label" htmlFor="password">
-                    Contraseña
-                  </label>
+                </div>
+
+                {/* Confirm Password input */}
+                <div className="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    className="form-control form-control-lg rounded-input"
+                    placeholder="Confirmar Contraseña"
+                  />
                 </div>
 
                 <div className="button-container">
