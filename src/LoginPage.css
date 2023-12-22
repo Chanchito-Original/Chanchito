@@ -1,0 +1,54 @@
+/* LoginPage.css */
+.LoginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3498db; /* Azul de fondo */
+  }
+  
+  .Login-container {
+    background-color: #fff; /* Blanco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .Login-title {
+    color: #3498db; /* Azul */
+  }
+  
+  .Login-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #3498db; /* Línea divisora azul en el borde inferior */
+    padding: 5px 0;
+  }
+  
+  .Login-user-icon {
+    color: #3498db; /* Azul */
+    margin-right: 10px;
+  }
+  
+  input {
+    border: none;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .Login-button {
+    background-color: #3498db; /* Azul */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .Login-button:hover {
+    background-color: #2980b9; /* Azul más oscuro en hover */
+  }
+  
