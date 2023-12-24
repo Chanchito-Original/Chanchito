@@ -8,7 +8,7 @@ body {
 
 /* Estilos de la barra de navegación */
 .App-header {
-  background-color: #fff; /* Cambiado a blanco */
+  background-color: #fff;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -51,10 +51,20 @@ body {
 /* Ajustes para Bootstrap */
 .App-search-bar input {
   border: none;
-  padding: 8px; /* Ajuste del espacio interno */
-  border-radius: 20px; /* Hacer la barra redonda */
+  padding: 8px;
+  border-radius: 20px;
   margin-right: 5px;
-  width: 20%; /* Reducido el ancho al 60% */
+  width: 60%; /* Ajustado el ancho */
+}
+
+.App-search-button {
+  background-color: #3498db;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 15px; /* Ajuste del espacio interno */
 }
 
 /* Estilos específicos para dispositivos móviles */
@@ -67,15 +77,17 @@ body {
   .App-header-buttons {
     margin-top: 10px;
   }
+  
+  .App-search-bar input {
+    width: 100%; /* Ancho completo en dispositivos móviles */
+  }
 }
 
 /* Footer */
 .footer {
-  background-color: #fff; /* Cambiado a blanco */
-  color: #000; /* Cambiado a negro */
+  background-color: #fff;
+  color: #000;
   text-align: center;
   padding: 20px;
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }

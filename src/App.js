@@ -30,22 +30,34 @@ function App() {
 
       {/* Carrusel */}
       <div className="header-carousel">
-        <Carousel>
+        <Carousel fade>
           <Carousel.Item>
-            <img src="/pig-logo.png" alt="Imagen 1" />
+            <img
+              className="d-block w-100"
+              src="https://via.placeholder.com/800x400"
+              alt="Imagen 1"
+            />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="imagen2.jpg" alt="Imagen 2" />
+            <img
+              className="d-block w-100"
+              src="https://via.placeholder.com/800x400"
+              alt="Imagen 2"
+            />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="imagen3.jpg" alt="Imagen 3" />
+            <img
+              className="d-block w-100"
+              src="https://via.placeholder.com/800x400"
+              alt="Imagen 3"
+            />
           </Carousel.Item>
         </Carousel>
       </div>
 
       {/* Barra de Búsqueda */}
       <div className="App-search-bar">
-        <input type="text" placeholder="Buscar" />
+        <input type="text" className="form-control" placeholder="Buscar" />
         <Button className="App-search-button" variant="primary">
           <FaSearch />
         </Button>
@@ -54,20 +66,20 @@ function App() {
       {/* Contenido Principal */}
       <main className="App-main">
         {/* Sección de Solicitudes de Consultas */}
-        <section className="App-section">
+        <section className="App-section wow fadeIn" data-wow-duration="1s">
           <h2>Solicitudes de Consultas</h2>
           {/* Contenido de Solicitudes de Consultas */}
         </section>
 
         {/* Sección de Consultas en Curso */}
-        <section className="App-section">
+        <section className="App-section wow fadeIn" data-wow-duration="1s">
           <h2>Consultas en Curso</h2>
           {/* Contenido de Consultas en Curso */}
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer wow fadeIn" data-wow-duration="1s">
         <div className="footer-info">
           <h3>Información de la Empresa</h3>
           <p>
