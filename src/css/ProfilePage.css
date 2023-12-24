@@ -29,6 +29,7 @@
 
 .profile-details {
   margin-top: 20px;
+  padding: 10px;
 }
 
 .profile-detail {
@@ -58,4 +59,21 @@
 
 .back-button:hover {
   color: #606060; /* Color gris más oscuro en hover */
+}
+
+.profile-title {
+  padding: 20px;
+}
+
+.profile-box {
+  margin-top: 15px;
+}
+
+.profile-queries-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
