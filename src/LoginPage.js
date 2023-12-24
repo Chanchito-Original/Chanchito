@@ -69,7 +69,7 @@ function LoginPage() {
         <button type="button" className="forgot-password-button">
           ¿Olvidaste tu contraseña?
         </button>
-        <h3> Valentina va a cenar con su papa </h3>
+        <h5> Valentina va a cenar con su papa </h5>
       </form>
     </div>
   );
