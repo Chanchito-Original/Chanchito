@@ -1,0 +1,52 @@
+/* SettingsPage.css */
+.App-header {
+    background-color: #fff; /* Blanco */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #3498db; /* Línea divisora azul en el borde inferior */
+  }
+  
+  .App-logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .App-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px; /* Agrega espacio entre el logo y el texto */
+  }
+  
+  .App-title {
+    color: #ff99cc; /* Rosado claro */
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .App-header-buttons {
+    display: flex;
+  }
+  
+  /* Añade estilos adicionales para los botones de ajustes específicos */
+  
+  .App-main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido horizontalmente */
+  }
+  
+  .App-section {
+    margin-bottom: 40px;
+    background-color: #ecf0f1; /* Gris claro para las secciones */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido horizontalmente */
+    text-align: center; /* Centrar el texto horizontalmente */
+  }
+  

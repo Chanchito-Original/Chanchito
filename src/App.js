@@ -1,8 +1,9 @@
-import React from 'react';
-import { FaSearch } from 'react-icons/fa'; // Importa el icono de búsqueda
-import { FaCog, FaUser } from 'react-icons/fa'; // Importa los iconos necesarios
-import pigLogo from './img/pig-logo.png';
-import './css/App.css';
+import React from "react";
+import { FaSearch } from "react-icons/fa"; // Importa el icono de búsqueda
+import { FaCog, FaUser } from "react-icons/fa"; // Importa los iconos necesarios
+import pigLogo from "./img/pig-logo.png";
+import { Link } from "react-router-dom";
+import "./css/App.css";
 
 function App() {
   return (
@@ -10,15 +11,23 @@ function App() {
       <header className="App-header">
         <div className="App-header-container">
           <div className="App-logo-container">
-            <img src={pigLogo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Chanchito</h1>
+            <Link to="/">
+              <img src={pigLogo} className="App-logo" alt="logo" />
+            </Link>
+            <Link to="/" className="App-title">
+              Chanchito
+            </Link>
           </div>
           <div className="App-header-buttons">
             <button className="App-nav-button">
-              <FaCog /> Ajustes
+              <Link to="/settings">
+                <FaCog /> Ajustes
+              </Link>
             </button>
             <button className="App-nav-button">
-              <FaUser /> Perfil
+              <Link to="/perfil">
+                <FaUser /> Perfil
+              </Link>
             </button>
           </div>
         </div>

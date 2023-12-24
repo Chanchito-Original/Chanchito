@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './css/index.css';
-import App from './App';
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage'
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./css/index.css";
+import App from "./App";
+import LoginPage from "./LoginPage";
+import RegisterPage from "./RegisterPage";
+import SettingsPage from "./SettingsPage";
+import ProfilePage from "./ProfilePage";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
+        <Route path="/perfil" element={<ProfilePage />} />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/" element={<App />} />
