@@ -1,6 +1,8 @@
 import React from "react";
 import "./css/RegisterPage.css"; // Importa el nuevo CSS para estilos
 import pigLogo from "./img/pig-logo.png"; // Importa la imagen del logo de cerdito
+import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 // Componente de la página de registro
 function RegisterPage() {
@@ -123,7 +125,9 @@ function RegisterPage() {
 
           {/* Botón de inicio de sesión */}
           <button type="button" className="register-register-button">
-            Iniciar Sesión
+            <Nav.Link as={Link} to="/">
+              Iniciar Sesion
+            </Nav.Link>
           </button>
         </div>
       </form>
