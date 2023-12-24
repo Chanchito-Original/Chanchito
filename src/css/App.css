@@ -101,6 +101,34 @@ body {
     max-width: 70%;
   }
 
+  .navbar {
+    background-color: #fff; /* Cambia el color de fondo de la barra de navegación */
+    padding: 10px; /* Ajusta el espacio interno de la barra de navegación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil */
+    position: fixed; /* Fija la barra de navegación en la parte superior de la pantalla */
+    border-radius: 55px; /* Elimina el radio de borde para que sea más delgada */
+    margin-top: 10px;
+    margin-left: 18px;
+    width: 90%; /* Utiliza todo el ancho de la pantalla */
+    height: 10%;
+    z-index: 1000; /* Asegura que la barra de navegación esté sobre otros elementos */
+  }
+
+  .navbar-brand {
+    margin-right: auto; /* Centra el logo de la marca a la izquierda */
+    margin-left: auto; /* Centra el logo de la marca a la derecha */
+  }
+
+  .navbar-nav {
+    width: 100%; /* Utiliza todo el ancho del contenedor de la barra de navegación */
+    text-align: center; /* Centra los elementos de navegación */
+  }
+
+  .nav-link {
+    padding: 5px 10px; /* Ajusta el espacio interno de los enlaces de navegación */
+    font-size: 14px; /* Ajusta el tamaño de fuente de los enlaces */
+  }
+
   /* Añade espacio para el mapa */
   .map-container {
     width: 100%;
@@ -114,6 +142,7 @@ body {
     position: absolute;
     bottom: 10px;
     left: 50%;
+    top: 78%;
     transform: translateX(-50%);
     font-size: 24px;
     cursor: pointer;
