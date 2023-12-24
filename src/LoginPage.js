@@ -62,7 +62,9 @@ function LoginPage() {
             onClick={handleLoginClick}
             className="login-button"
           >
-            Acceder
+            <Nav.Link as={Link} to="/login">
+              Acceder
+            </Nav.Link>
           </button>
           <button type="button" className="register-button">
             <Nav.Link as={Link} to="/register">
