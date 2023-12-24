@@ -76,6 +76,33 @@ function App() {
           <h2>Consultas en Curso</h2>
           {/* Contenido de Consultas en Curso */}
         </section>
+        {/* Botones de navegación en la parte inferior para dispositivos móviles */}
+        <div className="mobile-nav">
+          <button
+            className="mobile-nav-button"
+            onClick={() => console.log("Pantalla 1")}
+          >
+            <i className="material-icons">home</i>
+          </button>
+          <button
+            className="mobile-nav-button"
+            onClick={() => console.log("Pantalla 2")}
+          >
+            <i className="material-icons">search</i>
+          </button>
+          <button
+            className="mobile-nav-button"
+            onClick={() => console.log("Pantalla 3")}
+          >
+            <i className="material-icons">settings</i>
+          </button>
+          <button
+            className="mobile-nav-button"
+            onClick={() => console.log("Pantalla 4")}
+          >
+            <i className="material-icons">person</i>
+          </button>
+        </div>
       </main>
 
       {/* Footer */}

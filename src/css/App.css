@@ -1,4 +1,3 @@
-/* App.css */
 /* Estilos generales */
 body {
   margin: 0;
@@ -22,9 +21,6 @@ body {
 /* Estilos del contenido principal */
 .App-main {
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .App-section {
@@ -34,9 +30,6 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
 }
 
@@ -50,44 +43,110 @@ body {
 
 /* Ajustes para Bootstrap */
 .App-search-bar input {
-  border: none;
-  padding: 8px;
   border-radius: 20px;
-  margin-right: 5px;
-  width: 60%; /* Ajustado el ancho */
+  width: 25%;
 }
 
 .App-search-button {
-  background-color: #3498db;
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: #fff;
   border-radius: 20px;
-  padding: 8px 15px; /* Ajuste del espacio interno */
+  padding: 8px 15px;
 }
 
 /* Estilos específicos para dispositivos móviles */
 @media (max-width: 768px) {
-  .App-header-container {
-    flex-direction: column;
-    align-items: center;
+  .App-header-buttons {
+    display: none; /* Ocultar botones de ajustes y perfil en dispositivos móviles */
   }
 
-  .App-header-buttons {
-    margin-top: 10px;
-  }
-  
   .App-search-bar input {
-    width: 100%; /* Ancho completo en dispositivos móviles */
+    width: 100%;
+  }
+
+  .header-carousel {
+    display: none; /* Ocultar el carrusel en dispositivos móviles */
+  }
+
+  .App-header {
+    padding: 10px; /* Ajuste en el espacio interno de la barra de navegación para móviles */
+  }
+
+  .App-title {
+    font-size: 18px; /* Tamaño de fuente ligeramente más pequeño para móviles */
+  }
+
+  .App-search-bar {
+    margin-top: 10px; /* Ajuste en el margen superior de la barra de búsqueda para móviles */
+  }
+
+  .App-search-bar input {
+    width: 100%; /* Ancho completo para la barra de búsqueda en móviles */
+  }
+
+  .App-search-button {
+    padding: 10px; /* Ajuste del espacio interno del botón de búsqueda para móviles */
+  }
+
+  .App-main {
+    padding: 20px; /* Ajuste en el espacio interno del contenido principal para móviles */
+  }
+
+  .App-section {
+    width: 100%; /* Ancho completo para las secciones en móviles */
+    margin-bottom: 20px; /* Ajuste en el margen inferior de las secciones para móviles */
+  }
+
+  .App-section h2 {
+    font-size: 20px; /* Tamaño de fuente ligeramente más grande para los títulos de sección en móviles */
+  }
+
+  .footer {
+    padding: 20px; /* Ajuste en el espacio interno del pie de página para móviles */
+  }
+
+  .navbar-toggler {
+    border: none; /* Quitar el borde del botón de la barra de navegación en móviles */
+    outline: none; /* Quitar el contorno del botón de la barra de navegación en móviles */
+  }
+
+  .navbar-toggler-icon {
+    background-color: #3498db; /* Color de fondo del icono del botón de la barra de navegación en móviles */
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-link svg {
+    margin-right: 5px; /* Ajuste en el margen derecho del icono en los enlaces de la barra de navegación */
+  }
+
+  .nav-link span {
+    display: none; /* Ocultar el texto en dispositivos móviles */
   }
 }
 
-/* Footer */
-.footer {
-  background-color: #fff;
-  color: #000;
-  text-align: center;
-  padding: 20px;
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  background-color: #3498db;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.mobile-nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
 }
