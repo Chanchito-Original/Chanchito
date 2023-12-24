@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import "./css/LoginPage.css"; // Importa el CSS para estilos
 import pigLogo from "./img/pig-logo.png"; // Importa la imagen del logo de cerdito
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 // Componente de la página de inicio de sesión
 function LoginPage() {
@@ -63,7 +65,9 @@ function LoginPage() {
             Acceder
           </button>
           <button type="button" className="register-button">
-            Registrarme
+            <Nav.Link as={Link} to="/register">
+              Registrarme
+            </Nav.Link>
           </button>
         </div>
         <button type="button" className="forgot-password-button">
