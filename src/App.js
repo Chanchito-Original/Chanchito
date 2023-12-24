@@ -2,46 +2,47 @@ import React, { useState, useEffect } from "react";
 import { FaSearch, FaCog, FaUser } from "react-icons/fa";
 import pigLogo from "./img/pig-logo.png";
 import { Link } from "react-router-dom";
+import { useMap } from "react-leaflet";
 import { Carousel, Navbar, Nav, Button } from "react-bootstrap";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./css/App.css";
 
 const mapContainerStyle = {
   width: "100%",
-  height: "100vh", // Modificado para ocupar toda la altura de la ventana
+  height: "100vh",
 };
 
-function App() {
-  const [userLocation, setUserLocation] = useState(null);
+function LocationMarker() {
+  const [position, setPosition] = useState(null);
+  const map = useMap();
 
   useEffect(() => {
-    // Obtener la ubicación del usuario al cargar la página
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log(
-            "Ubicación del usuario:",
-            position.coords.latitude,
-            position.coords.longitude
-          );
-          setUserLocation([
-            position.coords.latitude,
-            position.coords.longitude,
-          ]);
+          const { latitude, longitude } = position.coords;
+          setPosition([latitude, longitude]);
+          map.flyTo([latitude, longitude], map.getZoom());
         },
         (error) => {
-          console.error(
-            "Error obteniendo la ubicación del usuario:",
-            error.message
-          );
+          console.error("Error obtaining user location:", error.message);
         }
       );
     } else {
-      console.error("Geolocalización no soportada por este navegador.");
+      console.error("Geolocation is not supported by this browser.");
     }
-  }, []);
+  }, [map]);
 
+  return position === null ? null : (
+    <Marker position={position}>
+      <Popup>Tu ubicación actual.</Popup>
+    </Marker>
+  );
+}
+
+function App() {
   return (
     <div className="App">
       {/* Navbar */}
@@ -84,7 +85,7 @@ function App() {
         {/* Mapa */}
         <div className="map-container">
           <MapContainer
-            center={userLocation || [51.505, -0.09]} // Usar la ubicación del usuario si está disponible, de lo contrario, coordenadas de ejemplo
+            center={[0, 0]} // Coordenadas iniciales, se actualizarán al obtener la ubicación del usuario
             zoom={13}
             style={mapContainerStyle}
           >
@@ -92,11 +93,7 @@ function App() {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
-            {userLocation && (
-              <Marker position={userLocation}>
-                <Popup>Tu ubicación actual.</Popup>
-              </Marker>
-            )}
+            <LocationMarker />
           </MapContainer>
           <div
             className="scroll-indicator"
