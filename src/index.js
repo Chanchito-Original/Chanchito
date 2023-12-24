@@ -21,9 +21,9 @@ root.render(
       <Routes>
         <Route path="/perfil" element={<ProfilePage />} />
         <Route path="/settings" element={<SettingsPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/" element={<App />} />
+        <Route path="/login" element={<App />} />
       </Routes>
     </Router>
   </React.StrictMode>
