@@ -9,7 +9,7 @@ import "./css/App.css";
 
 const mapContainerStyle = {
   width: "100%",
-  height: "500px",
+  height: "100vh", // Modificado para ocupar toda la altura de la ventana
 };
 
 function App() {
@@ -20,17 +20,25 @@ function App() {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
+          console.log(
+            "Ubicación del usuario:",
+            position.coords.latitude,
+            position.coords.longitude
+          );
           setUserLocation([
             position.coords.latitude,
             position.coords.longitude,
           ]);
         },
         (error) => {
-          console.error("Error getting user location:", error.message);
+          console.error(
+            "Error obteniendo la ubicación del usuario:",
+            error.message
+          );
         }
       );
     } else {
-      console.error("Geolocation is not supported by this browser.");
+      console.error("Geolocalización no soportada por este navegador.");
     }
   }, []);
 
