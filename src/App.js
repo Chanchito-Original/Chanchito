@@ -1,13 +1,39 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, useEffect } from "react";
 import { FaSearch, FaCog, FaUser } from "react-icons/fa";
 import pigLogo from "./img/pig-logo.png";
 import { Link } from "react-router-dom";
 import { Carousel, Navbar, Nav, Button } from "react-bootstrap";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./css/App.css";
 
+const mapContainerStyle = {
+  width: "100%",
+  height: "500px",
+};
+
 function App() {
+  const [userLocation, setUserLocation] = useState(null);
+
+  useEffect(() => {
+    // Obtener la ubicación del usuario al cargar la página
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation([
+            position.coords.latitude,
+            position.coords.longitude,
+          ]);
+        },
+        (error) => {
+          console.error("Error getting user location:", error.message);
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
+  }, []);
+
   return (
     <div className="App">
       {/* Navbar */}
@@ -49,8 +75,21 @@ function App() {
       <main className="App-main">
         {/* Mapa */}
         <div className="map-container">
-          {/* Aquí puedes integrar tu mapa de Google Maps */}
-          {/* Puedes utilizar la API de Google Maps u otro servicio de mapas */}
+          <MapContainer
+            center={userLocation || [51.505, -0.09]} // Usar la ubicación del usuario si está disponible, de lo contrario, coordenadas de ejemplo
+            zoom={13}
+            style={mapContainerStyle}
+          >
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+            {userLocation && (
+              <Marker position={userLocation}>
+                <Popup>Tu ubicación actual.</Popup>
+              </Marker>
+            )}
+          </MapContainer>
           <div
             className="scroll-indicator"
             onClick={() =>

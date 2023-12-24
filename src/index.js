@@ -1,6 +1,7 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/index.css";
 import App from "./App";
 import LoginPage from "./LoginPage";
@@ -8,11 +9,10 @@ import RegisterPage from "./RegisterPage";
 import SettingsPage from "./SettingsPage";
 import ProfilePage from "./ProfilePage";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { register } from "./serviceWorkerRegistration"; // Adjust the path as needed
+import { register } from "./serviceWorkerRegistration";
 
 // Import serviceWorkerRegistration from the correct path
-import { register as registerServiceWorker } from "./serviceWorkerRegistration"; // Adjust the path accordingly
+import { register as registerServiceWorker } from "./serviceWorkerRegistration";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,7 +26,8 @@ root.render(
         <Route path="/login" element={<App />} />
       </Routes>
     </Router>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
