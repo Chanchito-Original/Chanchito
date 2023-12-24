@@ -1,44 +1,21 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useSpring, animated } from "react-spring";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-import React, { useState, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import pigLogo from "./img/pig-logo.png";
+import React from "react";
 import { FaSearch, FaCog, FaUser } from "react-icons/fa";
+import pigLogo from "./img/pig-logo.png";
 import { Link } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./css/App.css";
 
-const App = () => {
-  const [showCarousel, setShowCarousel] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowCarousel(false);
-    }, 5000); // Oculta el carrusel después de 5 segundos (ajusta según sea necesario)
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const carouselAnimation = useSpring({
-    opacity: showCarousel ? 1 : 0,
-    transform: showCarousel ? "translateY(0)" : "translateY(-100%)",
-  });
-
+function App() {
   return (
     <div className="App">
+      {/* Header */}
       <header className="App-header">
         <div className="App-header-container">
           <div className="App-logo-container">
             <Link to="/">
               <img src={pigLogo} className="App-logo" alt="logo" />
-            </Link>
-            <Link to="/" className="App-title">
-              Chanchito
+              <span className="App-title">Chanchito</span>
             </Link>
           </div>
           <div className="App-header-buttons">
@@ -56,6 +33,22 @@ const App = () => {
         </div>
       </header>
 
+      {/* Carrusel */}
+      <div className="header-carousel">
+        <Carousel>
+          <div>
+            <img src="imagen1.jpg" alt="Imagen 1" />
+          </div>
+          <div>
+            <img src="imagen2.jpg" alt="Imagen 2" />
+          </div>
+          <div>
+            <img src="imagen3.jpg" alt="Imagen 3" />
+          </div>
+        </Carousel>
+      </div>
+
+      {/* Barra de Búsqueda */}
       <div className="App-search-bar">
         <input type="text" placeholder="Buscar" />
         <button className="App-search-button">
@@ -63,6 +56,7 @@ const App = () => {
         </button>
       </div>
 
+      {/* Contenido Principal */}
       <main className="App-main">
         <section className="App-section">
           <h2>Solicitudes de Consultas</h2>
@@ -74,8 +68,19 @@ const App = () => {
           {/* Contenido de Consultas en Curso */}
         </section>
       </main>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-info">
+          <h3>Información de la Empresa</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </footer>
     </div>
   );
-};
+}
 
 export default App;

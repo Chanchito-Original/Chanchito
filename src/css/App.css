@@ -1,9 +1,16 @@
 /* App.css */
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Estilos de la barra de navegación */
 .App-header {
-  background-color: #fff; /* Blanco */
+  background-color: #3498db;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #3498db; /* Línea divisora azul en el borde inferior */
 }
 
 .App-header-container {
@@ -21,11 +28,11 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 10px; /* Agrega espacio entre el logo y el texto */
+  margin-right: 10px;
 }
 
 .App-title {
-  color: #ff99cc; /* Rosado claro */
+  color: #fff;
   margin: 0;
   font-size: 24px;
 }
@@ -36,7 +43,7 @@
 
 .App-nav-button {
   background-color: transparent;
-  color: #3498db; /* Azul */
+  color: #fff;
   border: none;
   padding: 10px 15px;
   margin: 0 10px;
@@ -49,35 +56,36 @@
 }
 
 .App-nav-button:hover {
-  color: #fff; /* Blanco en hover */
-  background-color: #3498db; /* Azul en hover */
+  background-color: #2980b9;
 }
 
+/* Estilos del contenido principal */
 .App-main {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar el contenido horizontalmente */
+  align-items: center;
 }
 
 .App-section {
   margin-bottom: 40px;
-  background-color: #ecf0f1; /* Gris claro para las secciones */
+  background-color: #fff;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar el contenido horizontalmente */
-  text-align: center; /* Centrar el texto horizontalmente */
+  align-items: center;
+  text-align: center;
 }
 
+/* Estilos de la barra de búsqueda */
 .App-search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px; /* Espacio entre el header y la barra de búsqueda */
+  margin-top: 20px;
 }
 
 .App-search-bar input {
@@ -85,16 +93,42 @@
   padding: 10px;
   border-radius: 20px;
   margin-right: 5px;
+  width: 100%;
 }
 
 .App-search-button {
-  background-color: transparent;
+  background-color: #3498db;
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: #3498db; /* Azul */
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 15px;
 }
 
 .App-search-button:hover {
-  color: #2980b9; /* Azul más oscuro en hover */
+  background-color: #2980b9;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+  .App-header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .App-header-buttons {
+    margin-top: 10px;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
