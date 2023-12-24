@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #f2f2f2;
+  font-size: 16px; /* Tamaño de fuente base */
 }
 
 /* Estilos de la barra de navegación */
@@ -57,75 +58,66 @@ body {
 
 /* Estilos específicos para dispositivos móviles */
 @media (max-width: 768px) {
-  .App-header-buttons {
-    display: none; /* Ocultar botones de ajustes y perfil en dispositivos móviles */
+  /* ... Ajustes anteriores ... */
+
+  /* Ajustes específicos para dispositivos móviles */
+  body {
+    font-size: 14px; /* Ajuste en el tamaño de fuente base para dispositivos móviles */
   }
 
   .App-search-bar input {
     width: 100%;
-  }
-
-  .header-carousel {
-    display: none; /* Ocultar el carrusel en dispositivos móviles */
-  }
-
-  .App-header {
-    padding: 10px; /* Ajuste en el espacio interno de la barra de navegación para móviles */
-  }
-
-  .App-title {
-    font-size: 18px; /* Tamaño de fuente ligeramente más pequeño para móviles */
-  }
-
-  .App-search-bar {
-    margin-top: 10px; /* Ajuste en el margen superior de la barra de búsqueda para móviles */
-  }
-
-  .App-search-bar input {
-    width: 100%; /* Ancho completo para la barra de búsqueda en móviles */
+    margin-top: 10px;
   }
 
   .App-search-button {
-    padding: 10px; /* Ajuste del espacio interno del botón de búsqueda para móviles */
+    padding: 5px;
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+    margin-top: 10px;
   }
 
   .App-main {
-    padding: 20px; /* Ajuste en el espacio interno del contenido principal para móviles */
+    padding: 15px;
   }
 
   .App-section {
-    width: 100%; /* Ancho completo para las secciones en móviles */
-    margin-bottom: 20px; /* Ajuste en el margen inferior de las secciones para móviles */
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .App-section h2 {
-    font-size: 20px; /* Tamaño de fuente ligeramente más grande para los títulos de sección en móviles */
+    font-size: 18px;
   }
 
   .footer {
-    padding: 20px; /* Ajuste en el espacio interno del pie de página para móviles */
+    padding: 15px;
   }
 
-  .navbar-toggler {
-    border: none; /* Quitar el borde del botón de la barra de navegación en móviles */
-    outline: none; /* Quitar el contorno del botón de la barra de navegación en móviles */
+  .form-control {
+    max-width: 70%;
   }
 
-  .navbar-toggler-icon {
-    background-color: #3498db; /* Color de fondo del icono del botón de la barra de navegación en móviles */
+  /* Añade espacio para el mapa */
+  .map-container {
+    width: 100%;
+    height: calc(100vh - 20px); /* Utiliza toda la altura de la pantalla y resta un margen superior */
+    margin-top: 20px; /* Agrega un margen superior para separar el mapa de otras secciones */
+    position: relative;
   }
 
-  .nav-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* Flecha hacia abajo */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    color: #3498db; /* Color azul */
   }
 
-  .nav-link svg {
-    margin-right: 5px; /* Ajuste en el margen derecho del icono en los enlaces de la barra de navegación */
-  }
-
-  .nav-link span {
-    display: none; /* Ocultar el texto en dispositivos móviles */
-  }
 }
