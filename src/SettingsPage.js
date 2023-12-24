@@ -2,6 +2,7 @@ import React from "react";
 import "./css/SettingsPage.css"; // Asegúrate de ajustar la ruta del CSS
 import pigLogo from "./img/pig-logo.png"; // Asegúrate de ajustar la ruta del logo
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function SettingsPage() {
   return (

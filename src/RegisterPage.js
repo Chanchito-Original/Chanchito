@@ -1,17 +1,18 @@
-import React from 'react';
-import './css/RegisterPage.css'; // Importa el nuevo CSS para estilos
-import pigLogo from './img/pig-logo.png'; // Importa la imagen del logo de cerdito
+import React from "react";
+import "./css/RegisterPage.css"; // Importa el nuevo CSS para estilos
+import pigLogo from "./img/pig-logo.png"; // Importa la imagen del logo de cerdito
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Componente de la página de registro
 function RegisterPage() {
   // Función de manejo de clic para el botón de registro
   const handleRegisterClick = () => {
     // Obtener referencias a los elementos del formulario de registro
-    const nombreInput = document.getElementById('nombre');
-    const apellidoInput = document.getElementById('apellido');
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const nombreInput = document.getElementById("nombre");
+    const apellidoInput = document.getElementById("apellido");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
 
     // Obtener valores de los campos de entrada
     const nombre = nombreInput.value;
@@ -22,15 +23,15 @@ function RegisterPage() {
 
     // Validar si las contraseñas coinciden
     if (password !== confirmPassword) {
-      console.error('Las contraseñas no coinciden');
+      console.error("Las contraseñas no coinciden");
       return;
     }
 
     // Realizar acciones de registro (puedes reemplazar con tu lógica)
-    console.log('Nombre:', nombre);
-    console.log('Apellido:', apellido);
-    console.log('Email:', email);
-    console.log('Contraseña:', password);
+    console.log("Nombre:", nombre);
+    console.log("Apellido:", apellido);
+    console.log("Email:", email);
+    console.log("Contraseña:", password);
   };
 
   // Renderizar el componente de la página de registro
@@ -38,7 +39,7 @@ function RegisterPage() {
     <section className="register-container vh-100">
       <div className="container h-100 d-flex justify-content-center align-items-center">
         <div className="col-md-8 col-lg-6 col-xl-16 offset-xl-1">
-          <div className="card" style={{ width: '35rem' }}>
+          <div className="card" style={{ width: "35rem" }}>
             <div className="card-body">
               <div className="text-center">
                 <img src={pigLogo} alt="Logo de cerdito" className="logo" />

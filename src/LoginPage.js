@@ -1,7 +1,8 @@
 // Importa las bibliotecas de React y CSS
-import React, { useState } from 'react';
-import './css/LoginPage.css'; // Importa el CSS para estilos
-import pigLogo from './img/pig-logo.png'; // Importa la imagen del logo de cerdito
+import React, { useState } from "react";
+import "./css/LoginPage.css"; // Importa el CSS para estilos
+import pigLogo from "./img/pig-logo.png"; // Importa la imagen del logo de cerdito
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Componente de la página de inicio de sesión
 function LoginPage() {
@@ -11,16 +12,16 @@ function LoginPage() {
   // Función de manejo de clic para el botón de inicio de sesión
   const handleLoginClick = () => {
     // Obtener referencias a los elementos del formulario
-    const emailUsuarioInput = document.getElementById('emailUsuario');
-    const passwordInput = document.getElementById('password');
+    const emailUsuarioInput = document.getElementById("emailUsuario");
+    const passwordInput = document.getElementById("password");
 
     // Obtener valores de los campos de entrada
     const emailUsuario = emailUsuarioInput.value;
     const password = passwordInput.value;
 
     // Realizar acciones de inicio de sesión (puedes reemplazar con tu lógica)
-    console.log('Email/Usuario:', emailUsuario);
-    console.log('Contraseña:', password);
+    console.log("Email/Usuario:", emailUsuario);
+    console.log("Contraseña:", password);
   };
 
   // Función de manejo de foco para los campos de entrada
@@ -37,20 +38,28 @@ function LoginPage() {
         <input
           type="text"
           id="emailUsuario"
-          className={`rounded-input ${focusedInput === 'emailUsuario' ? 'focused' : ''}`}
-          onFocus={() => handleFocus('emailUsuario')}
+          className={`rounded-input ${
+            focusedInput === "emailUsuario" ? "focused" : ""
+          }`}
+          onFocus={() => handleFocus("emailUsuario")}
           onBlur={() => handleFocus(null)}
         />
         <label htmlFor="password">Contraseña:</label>
         <input
           type="password"
           id="password"
-          className={`rounded-input ${focusedInput === 'password' ? 'focused' : ''}`}
-          onFocus={() => handleFocus('password')}
+          className={`rounded-input ${
+            focusedInput === "password" ? "focused" : ""
+          }`}
+          onFocus={() => handleFocus("password")}
           onBlur={() => handleFocus(null)}
         />
         <div className="button-container">
-          <button type="button" onClick={handleLoginClick} className="login-button">
+          <button
+            type="button"
+            onClick={handleLoginClick}
+            className="login-button"
+          >
             Acceder
           </button>
           <button type="button" className="register-button">
