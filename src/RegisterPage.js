@@ -129,7 +129,6 @@ function RegisterPage() {
                   className="btn btn-primary register-login-button"
                   onClick={handleRegisterClick}
                 >
-                  {" "}
                   Registrarse
                 </button>
 

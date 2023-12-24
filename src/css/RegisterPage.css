@@ -21,8 +21,8 @@
   background-color: #fff; /* Fondo blanco del formulario */
   padding: 20px;
   border-radius: 10px; /* Borde redondeado del formulario */
+  max-width: 350px; /* Establece el ancho máximo del formulario */
   width: 80%; /* Ajusta el ancho del formulario */
-  max-width: 400px; /* Establece un ancho máximo */
   margin: 0 auto; /* Centra el formulario horizontalmente */
 }
 
@@ -46,7 +46,7 @@
 
 .register-button-container {
   display: flex;
-  justify-content: center; /* Cambiado de space-between a center */
+  justify-content: center; /* Centra los botones horizontalmente */
   margin-top: 15px; /* Espacio entre el formulario y los botones */
 }
 
