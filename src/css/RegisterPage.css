@@ -11,7 +11,7 @@
   width: 150px; /* Ajusta el tamaño del logo según tu preferencia */
   height: 150px;
   margin-bottom: 20px; /* Espacio entre el logo y los campos de texto */
-  margin-right: 36%;
+  margin-left: 36%;
 }
 
 .register-form {
@@ -21,8 +21,8 @@
   background-color: #fff; /* Fondo blanco del formulario */
   padding: 20px;
   border-radius: 10px; /* Borde redondeado del formulario */
-  width: 80%; /* Ajusta el ancho del formulario */
-  max-width: 400px; /* Establece un ancho máximo */
+  max-width: 350px; /* Establece el ancho máximo del formulario */
+  width: 100%; /* Asegura que el formulario se expanda a lo ancho del contenedor */
   margin: 0 auto; /* Centra el formulario horizontalmente */
 }
 
@@ -36,12 +36,16 @@ label {
   border: 1px solid #ccc; /* Borde del campo de texto */
   border-radius: 25px; /* Campo de texto más redondo */
   transition: border-color 0.3s; /* Transición para cambiar el color del borde */
-  width: 100%; /* Ajusta el ancho del campo de texto al 100% del contenedor */
+}
+
+.rounded-input:focus {
+  border-color: #ff6b6b; /* Color del borde al enfocar el campo de texto */
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.5); /* Sombra al enfocar */
 }
 
 .button-container {
   display: flex;
-  justify-content: space-between; /* Ajustado de center a space-between */
+  justify-content: center; /* Cambiado de space-between a center */
   margin-top: 15px; /* Espacio entre el formulario y los botones */
 }
 
@@ -52,7 +56,7 @@ label {
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  width: 45%; /* Ajusta el ancho de los botones alrededor del 45% del contenedor */
+  margin: 0 10px; /* Espacio horizontal entre los botones */
 }
 
 .login-button {
