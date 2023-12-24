@@ -11,7 +11,7 @@ import "./css/App.css";
 
 const mapContainerStyle = {
   width: "100%",
-  height: "100vh",
+  height: "500px",
 };
 
 function LocationMarker() {
