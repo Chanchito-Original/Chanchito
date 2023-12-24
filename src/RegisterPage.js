@@ -1,7 +1,6 @@
 import React from "react";
 import "./css/RegisterPage.css"; // Importa el nuevo CSS para estilos
 import pigLogo from "./img/pig-logo.png"; // Importa la imagen del logo de cerdito
-import "bootstrap/dist/css/bootstrap.min.css";
 
 // Componente de la página de registro
 function RegisterPage() {
@@ -39,111 +38,95 @@ function RegisterPage() {
   // Renderizar el componente de la página de registro
   return (
     <section className="register-container">
-      <div className="container">
-        <div className="card">
-          <div className="card-body">
-            <div className="text-center">
-              <img
-                src={pigLogo}
-                alt="Logo de cerdito"
-                className="register-logo"
-              />
-            </div>
-            <form className="register-form-container">
-              <div className="title-container">
-                <p className="lead register-label">Registro</p>
-              </div>
-
-              {/* Nombre input */}
-              <div className="form-group">
-                <label htmlFor="register-nombre" className="register-label">
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  id="register-nombre"
-                  className="form-control register-rounded-input"
-                  placeholder="Nombre"
-                />
-              </div>
-
-              {/* Apellido input */}
-              <div className="form-group">
-                <label htmlFor="register-apellido" className="register-label">
-                  Apellido
-                </label>
-                <input
-                  type="text"
-                  id="register-apellido"
-                  className="form-control register-rounded-input"
-                  placeholder="Apellido"
-                />
-              </div>
-
-              {/* Email input */}
-              <div className="form-group">
-                <label htmlFor="register-email" className="register-label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="register-email"
-                  className="form-control register-rounded-input"
-                  placeholder="Email"
-                />
-              </div>
-
-              {/* Password input */}
-              <div className="form-group">
-                <label htmlFor="register-password" className="register-label">
-                  Contraseña
-                </label>
-                <input
-                  type="password"
-                  id="register-password"
-                  className="form-control register-rounded-input"
-                  placeholder="Contraseña"
-                />
-              </div>
-
-              {/* Confirm Password input */}
-              <div className="form-group">
-                <label
-                  htmlFor="register-confirmPassword"
-                  className="register-label"
-                >
-                  Confirmar Contraseña
-                </label>
-                <input
-                  type="password"
-                  id="register-confirmPassword"
-                  className="form-control register-rounded-input"
-                  placeholder="Confirmar Contraseña"
-                />
-              </div>
-
-              <div className="register-button-container">
-                {/* Botón de registro */}
-                <button
-                  type="button"
-                  className="btn btn-primary register-login-button"
-                  onClick={handleRegisterClick}
-                >
-                  Registrarse
-                </button>
-
-                {/* Botón de inicio de sesión */}
-                <button
-                  type="button"
-                  className="btn btn-secondary register-register-button"
-                >
-                  Iniciar Sesión
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+      <div className="register-logo-container">
+        <img src={pigLogo} alt="Logo de cerdito" className="register-logo" />
       </div>
+      <form className="register-form-container">
+        <div className="title-container">
+          <p className="register-label-title">Registro</p>
+        </div>
+
+        {/* Nombre input */}
+        <div className="form-group">
+          <label htmlFor="register-nombre" className="register-label">
+            Nombre
+          </label>
+          <input
+            type="text"
+            id="register-nombre"
+            className="register-rounded-input"
+            placeholder="Nombre"
+          />
+        </div>
+
+        {/* Apellido input */}
+        <div className="form-group">
+          <label htmlFor="register-apellido" className="register-label">
+            Apellido
+          </label>
+          <input
+            type="text"
+            id="register-apellido"
+            className="register-rounded-input"
+            placeholder="Apellido"
+          />
+        </div>
+
+        {/* Email input */}
+        <div className="form-group">
+          <label htmlFor="register-email" className="register-label">
+            Email
+          </label>
+          <input
+            type="email"
+            id="register-email"
+            className="register-rounded-input"
+            placeholder="Email"
+          />
+        </div>
+
+        {/* Password input */}
+        <div className="form-group">
+          <label htmlFor="register-password" className="register-label">
+            Contraseña
+          </label>
+          <input
+            type="password"
+            id="register-password"
+            className="register-rounded-input"
+            placeholder="Contraseña"
+          />
+        </div>
+
+        {/* Confirm Password input */}
+        <div className="form-group">
+          <label htmlFor="register-confirmPassword" className="register-label">
+            Confirmar Contraseña
+          </label>
+          <input
+            type="password"
+            id="register-confirmPassword"
+            className="register-rounded-input"
+            placeholder="Confirmar Contraseña"
+          />
+        </div>
+
+        <div className="register-button-container">
+          {/* Botón de registro */}
+          <button
+            type="button"
+            className="register-login-button"
+            onClick={handleRegisterClick}
+          >
+            Registrarse
+          </button>
+
+          {/* Botón de inicio de sesión */}
+          <button type="button" className="register-register-button">
+            Iniciar Sesión
+          </button>
+        </div>
+      </form>
     </section>
   );
 }
