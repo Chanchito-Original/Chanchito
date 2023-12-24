@@ -65,9 +65,14 @@ body {
     font-size: 14px; /* Ajuste en el tamaño de fuente base para dispositivos móviles */
   }
 
+  .App-search-bar {
+    width: 200%;
+    margin: 10px 0;
+  }
+
   .App-search-bar input {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   .App-search-button {
@@ -75,7 +80,7 @@ body {
     height: 35px;
     width: 35px;
     margin-right: 5px;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   .App-main {
@@ -110,7 +115,7 @@ body {
     margin-top: 10px;
     margin-left: 18px;
     width: 90%; /* Utiliza todo el ancho de la pantalla */
-    height: 10%;
+    height: 8%;
     z-index: 1000; /* Asegura que la barra de navegación esté sobre otros elementos */
   }
 

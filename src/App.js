@@ -21,14 +21,20 @@ function App() {
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/settings">
-            <FaCog />{" "}
-            {/* Puedes añadir un texto aquí para dispositivos móviles si lo deseas */}
+            <FaCog />
           </Nav.Link>
           <Nav.Link as={Link} to="/perfil">
-            <FaUser />{" "}
-            {/* Puedes añadir un texto aquí para dispositivos móviles si lo deseas */}
+            <FaUser />
           </Nav.Link>
         </Nav>
+
+        {/* Barra de Búsqueda */}
+        <div className="App-search-bar">
+          <Button className="App-search-button" variant="primary">
+            <FaSearch />
+          </Button>
+          <input type="text" className="form-control" placeholder="Buscar" />
+        </div>
       </Navbar>
 
       {/* Carrusel */}
@@ -37,14 +43,6 @@ function App() {
           {/* Imágenes del carrusel para dispositivos móviles */}
           {/* ... */}
         </Carousel>
-      </div>
-
-      {/* Barra de Búsqueda */}
-      <div className="App-search-bar">
-        <Button className="App-search-button" variant="primary">
-          <FaSearch />
-        </Button>
-        <input type="text" className="form-control" placeholder="Buscar" />
       </div>
 
       {/* Contenido Principal */}
@@ -62,6 +60,7 @@ function App() {
             &#9660; {/* Código de la flecha hacia abajo */}
           </div>
         </div>
+
         {/* Sección de Solicitudes de Consultas */}
         <section className="App-section wow fadeIn" data-wow-duration="1s">
           <h2>Solicitudes de Consultas</h2>
