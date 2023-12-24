@@ -1,11 +1,34 @@
-import React from "react";
-import { FaSearch } from "react-icons/fa"; // Importa el icono de búsqueda
-import { FaCog, FaUser } from "react-icons/fa"; // Importa los iconos necesarios
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+import React, { useState, useEffect } from "react";
+import { useSpring, animated } from "react-spring";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import pigLogo from "./img/pig-logo.png";
+import { FaSearch, FaCog, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./css/App.css";
 
-function App() {
+const App = () => {
+  const [showCarousel, setShowCarousel] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCarousel(false);
+    }, 5000); // Oculta el carrusel después de 5 segundos (ajusta según sea necesario)
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const carouselAnimation = useSpring({
+    opacity: showCarousel ? 1 : 0,
+    transform: showCarousel ? "translateY(0)" : "translateY(-100%)",
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -53,6 +76,6 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 export default App;
