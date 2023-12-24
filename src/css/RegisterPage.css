@@ -7,73 +7,74 @@
   background-color: #f5e1da; /* Color de fondo pastel agradable */
 }
 
-.logo {
+.register-logo {
   width: 150px; /* Ajusta el tamaño del logo según tu preferencia */
   height: 150px;
   margin-bottom: 20px; /* Espacio entre el logo y los campos de texto */
-  margin-left: 36%;
+  margin-right: 0%;
 }
 
-.register-form {
+.register-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fff; /* Fondo blanco del formulario */
   padding: 20px;
   border-radius: 10px; /* Borde redondeado del formulario */
-  max-width: 350px; /* Establece el ancho máximo del formulario */
-  width: 100%; /* Asegura que el formulario se expanda a lo ancho del contenedor */
+  width: 80%; /* Ajusta el ancho del formulario */
+  max-width: 400px; /* Establece un ancho máximo */
   margin: 0 auto; /* Centra el formulario horizontalmente */
 }
 
-label {
+.register-label {
   margin-bottom: 10px;
 }
 
-.rounded-input {
+.register-rounded-input {
   margin-bottom: 15px;
   padding: 12px;
   border: 1px solid #ccc; /* Borde del campo de texto */
   border-radius: 25px; /* Campo de texto más redondo */
   transition: border-color 0.3s; /* Transición para cambiar el color del borde */
+  width: 100%; /* Ajusta el ancho del campo de texto al 100% del contenedor */
 }
 
-.rounded-input:focus {
+.register-rounded-input:focus {
   border-color: #ff6b6b; /* Color del borde al enfocar el campo de texto */
   box-shadow: 0 0 8px rgba(255, 107, 107, 0.5); /* Sombra al enfocar */
 }
 
-.button-container {
+.register-button-container {
   display: flex;
   justify-content: center; /* Cambiado de space-between a center */
   margin-top: 15px; /* Espacio entre el formulario y los botones */
 }
 
-.login-button,
-.register-button,
-.forgot-password-button {
+.register-login-button,
+.register-register-button,
+.register-forgot-password-button {
   padding: 12px;
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  margin: 0 10px; /* Espacio horizontal entre los botones */
+  width: 45%; /* Ajusta el ancho de los botones alrededor del 45% del contenedor */
 }
 
-.login-button {
+.register-login-button {
   background-color: #f9a3a4; /* Color de fondo */
   color: #fff; /* Color del texto */
 }
 
-.register-button {
+.register-register-button {
   background-color: #f9a3a4; /* Color de fondo */
   color: #fff; /* Color del texto */
 }
 
-.forgot-password-button {
+.register-forgot-password-button {
   color: #ff6b6b; /* Color del texto */
 }
 
-.login-button:hover,
-.register-button:hover {
+.register-login-button:hover,
+.register-register-button:hover {
   background-color: #f7cacb; /* Color de fondo al pasar el ratón */
 }

@@ -8,11 +8,13 @@ function RegisterPage() {
   // Función de manejo de clic para el botón de registro
   const handleRegisterClick = () => {
     // Obtener referencias a los elementos del formulario de registro
-    const nombreInput = document.getElementById("nombre");
-    const apellidoInput = document.getElementById("apellido");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const confirmPasswordInput = document.getElementById("confirmPassword");
+    const nombreInput = document.getElementById("register-nombre");
+    const apellidoInput = document.getElementById("register-apellido");
+    const emailInput = document.getElementById("register-email");
+    const passwordInput = document.getElementById("register-password");
+    const confirmPasswordInput = document.getElementById(
+      "register-confirmPassword"
+    );
 
     // Obtener valores de los campos de entrada
     const nombre = nombreInput.value;
@@ -36,89 +38,110 @@ function RegisterPage() {
 
   // Renderizar el componente de la página de registro
   return (
-    <section className="register-container vh-100">
-      <div className="container h-100 d-flex justify-content-center align-items-center">
-        <div className="col-md-8 col-lg-6 col-xl-16 offset-xl-1">
-          <div className="card" style={{ width: "35rem" }}>
-            <div className="card-body">
-              <div className="text-center">
-                <img src={pigLogo} alt="Logo de cerdito" className="logo" />
-              </div>
-              <form className="register-form">
-                <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                  <p className="lead fw-normal mb-0 me-3">Registro</p>
-                </div>
-
-                {/* Nombre input */}
-                <div className="form-outline mb-4">
-                  <input
-                    type="text"
-                    id="nombre"
-                    className="form-control form-control-lg rounded-input"
-                    placeholder="Nombre"
-                  />
-                </div>
-
-                {/* Apellido input */}
-                <div className="form-outline mb-4">
-                  <input
-                    type="text"
-                    id="apellido"
-                    className="form-control form-control-lg rounded-input"
-                    placeholder="Apellido"
-                  />
-                </div>
-
-                {/* Email input */}
-                <div className="form-outline mb-4">
-                  <input
-                    type="email"
-                    id="email"
-                    className="form-control form-control-lg rounded-input"
-                    placeholder="Email"
-                  />
-                </div>
-
-                {/* Password input */}
-                <div className="form-outline mb-4">
-                  <input
-                    type="password"
-                    id="password"
-                    className="form-control form-control-lg rounded-input"
-                    placeholder="Contraseña"
-                  />
-                </div>
-
-                {/* Confirm Password input */}
-                <div className="form-outline mb-4">
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    className="form-control form-control-lg rounded-input"
-                    placeholder="Confirmar Contraseña"
-                  />
-                </div>
-
-                <div className="button-container">
-                  {/* Botón de registro */}
-                  <button
-                    type="button"
-                    className="btn btn-primary btn-lg rounded-button register-button"
-                    onClick={handleRegisterClick}
-                  >
-                    Registrarse
-                  </button>
-
-                  {/* Botón de inicio de sesión */}
-                  <button
-                    type="button"
-                    className="btn btn-secondary btn-lg rounded-button login-button"
-                  >
-                    Iniciar Sesión
-                  </button>
-                </div>
-              </form>
+    <section className="register-container">
+      <div className="container">
+        <div className="card">
+          <div className="card-body">
+            <div className="text-center">
+              <img
+                src={pigLogo}
+                alt="Logo de cerdito"
+                className="register-logo"
+              />
             </div>
+            <form className="register-form-container">
+              <div className="title-container">
+                <p className="lead register-label">Registro</p>
+              </div>
+
+              {/* Nombre input */}
+              <div className="form-group">
+                <label htmlFor="register-nombre" className="register-label">
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  id="register-nombre"
+                  className="form-control register-rounded-input"
+                  placeholder="Nombre"
+                />
+              </div>
+
+              {/* Apellido input */}
+              <div className="form-group">
+                <label htmlFor="register-apellido" className="register-label">
+                  Apellido
+                </label>
+                <input
+                  type="text"
+                  id="register-apellido"
+                  className="form-control register-rounded-input"
+                  placeholder="Apellido"
+                />
+              </div>
+
+              {/* Email input */}
+              <div className="form-group">
+                <label htmlFor="register-email" className="register-label">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="register-email"
+                  className="form-control register-rounded-input"
+                  placeholder="Email"
+                />
+              </div>
+
+              {/* Password input */}
+              <div className="form-group">
+                <label htmlFor="register-password" className="register-label">
+                  Contraseña
+                </label>
+                <input
+                  type="password"
+                  id="register-password"
+                  className="form-control register-rounded-input"
+                  placeholder="Contraseña"
+                />
+              </div>
+
+              {/* Confirm Password input */}
+              <div className="form-group">
+                <label
+                  htmlFor="register-confirmPassword"
+                  className="register-label"
+                >
+                  Confirmar Contraseña
+                </label>
+                <input
+                  type="password"
+                  id="register-confirmPassword"
+                  className="form-control register-rounded-input"
+                  placeholder="Confirmar Contraseña"
+                />
+              </div>
+
+              <div className="register-button-container">
+                {/* Botón de registro */}
+                <button
+                  type="button"
+                  className="btn btn-primary register-login-button"
+                  onClick={handleRegisterClick}
+                >
+                  {" "}
+                  Registrarse
+                </button>
+
+                {/* Botón de inicio de sesión */}
+                <button
+                  type="button"
+                  className="btn btn-secondary register-register-button"
+                >
+                  Iniciar Sesión
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
