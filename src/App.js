@@ -4,15 +4,22 @@ import pigLogo from "./img/pig-logo.png";
 import { Link } from "react-router-dom";
 import { useMap } from "react-leaflet";
 import { Carousel, Navbar, Nav, Button } from "react-bootstrap";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./css/App.css";
 
-const mapContainerStyle = {
+const mapStyles = {
   width: "100%",
   height: "500px",
 };
+
+function MyMapComponent({ center, zoom }) {
+  const map = useMap();
+  map.setView(center, zoom);
+  return null;
+}
 
 function LocationMarker() {
   const [position, setPosition] = useState(null);
@@ -85,15 +92,27 @@ function App() {
         {/* Mapa */}
         <div className="map-container">
           <MapContainer
-            center={[0, 0]} // Coordenadas iniciales, se actualizarán al obtener la ubicación del usuario
+            center={userLocation || [51.505, -0.09]}
             zoom={13}
-            style={mapContainerStyle}
+            style={mapStyles}
           >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            <MyMapComponent
+              center={userLocation || [51.505, -0.09]}
+              zoom={13}
             />
-            <LocationMarker />
+            <TileLayer
+              url="https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
+              attribution='&copy; <a href="https://www.mapbox.com/map-feedback/">Mapbox</a>'
+              id="mapbox/streets-v11"
+              tileSize={512}
+              zoomOffset={-1}
+              accessToken="YOUR_MAPBOX_ACCESS_TOKEN"
+            />
+            {userLocation && (
+              <Marker position={userLocation}>
+                <Popup>Tu ubicación actual.</Popup>
+              </Marker>
+            )}
           </MapContainer>
           <div
             className="scroll-indicator"
