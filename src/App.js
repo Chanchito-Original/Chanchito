@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { FaSearch, FaCog, FaUser } from "react-icons/fa";
 import pigLogo from "./img/pig-logo.png";
 import { Link } from "react-router-dom";
-import { useMap } from "react-leaflet";
 import { Carousel, Navbar, Nav, Button } from "react-bootstrap";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
@@ -34,16 +33,27 @@ function LocationMarker() {
           map.flyTo([latitude, longitude], map.getZoom());
         },
         (error) => {
-          console.error("Error obtaining user location:", error.message);
+          console.error(
+            "Error obteniendo la ubicación del usuario:",
+            error.message
+          );
         }
       );
     } else {
-      console.error("Geolocation is not supported by this browser.");
+      console.error("La geolocalización no es compatible con este navegador.");
     }
   }, [map]);
 
+  const customIcon = new L.Icon({
+    iconUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png", // Reemplaza con la ruta correcta o utiliza FontAwesome
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32],
+  });
+
   return position === null ? null : (
-    <Marker position={position}>
+    <Marker position={position} icon={customIcon}>
       <Popup>Tu ubicación actual.</Popup>
     </Marker>
   );
@@ -92,27 +102,16 @@ function App() {
         {/* Mapa */}
         <div className="map-container">
           <MapContainer
-            center={userLocation || [51.505, -0.09]}
+            center={[51.505, -0.09]} // Centro de Londres como ubicación de ejemplo
             zoom={13}
             style={mapStyles}
           >
-            <MyMapComponent
-              center={userLocation || [51.505, -0.09]}
-              zoom={13}
-            />
+            <MyMapComponent center={[51.505, -0.09]} zoom={13} />
             <TileLayer
-              url="https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
-              attribution='&copy; <a href="https://www.mapbox.com/map-feedback/">Mapbox</a>'
-              id="mapbox/streets-v11"
-              tileSize={512}
-              zoomOffset={-1}
-              accessToken="YOUR_MAPBOX_ACCESS_TOKEN"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
-            {userLocation && (
-              <Marker position={userLocation}>
-                <Popup>Tu ubicación actual.</Popup>
-              </Marker>
-            )}
+            {<LocationMarker />}
           </MapContainer>
           <div
             className="scroll-indicator"
