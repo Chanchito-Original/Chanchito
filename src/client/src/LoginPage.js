@@ -43,6 +43,7 @@ function LoginPage() {
           className={`rounded-input ${
             focusedInput === "emailUsuario" ? "focused" : ""
           }`}
+          placeholder="Usuario"
           onFocus={() => handleFocus("emailUsuario")}
           onBlur={() => handleFocus(null)}
         />
@@ -53,6 +54,7 @@ function LoginPage() {
           className={`rounded-input ${
             focusedInput === "password" ? "focused" : ""
           }`}
+          placeholder="Contraseña"
           onFocus={() => handleFocus("password")}
           onBlur={() => handleFocus(null)}
         />

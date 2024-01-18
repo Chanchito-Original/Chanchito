@@ -7,7 +7,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "./css/App.css";`git `
+import "./css/App.css";
 
 const mapStyles = {
   width: "100%",
