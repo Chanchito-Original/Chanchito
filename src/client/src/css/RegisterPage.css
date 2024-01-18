@@ -1,0 +1,105 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  background-color: #f5e1da; /* Color de fondo pastel agradable */
+  animation: fadeInDown 1s ease-in-out; /* Aplica la animación fadeInDown */
+}
+
+
+.register-logo {
+  width: 150px; /* Ajusta el tamaño del logo según tu preferencia */
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+.register-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: auto;
+  background-color: #fff; /* Fondo blanco del formulario */
+  padding: 30px; /* Reducido el padding para un aspecto más compacto */
+  border-radius: 20px; /* Borde redondeado del formulario */
+  max-width: 400px; /* Ajustado el ancho máximo del formulario */
+  width: 80%; /* Ajusta el ancho del formulario */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar el formulario */
+}
+
+.register-label {
+  margin-bottom: 10px; /* Agregado espacio inferior a las etiquetas */
+}
+
+.register-rounded-input {
+  margin-bottom: 20px; /* Aumentada la separación entre campos de texto */
+  padding: 12px; /* Aumentado el padding para un aspecto más cómodo */
+  border: 1px solid #ccc; /* Borde del campo de texto */
+  border-radius: 25px; /* Campo de texto más redondo */
+  transition: border-color 0.3s; /* Transición para cambiar el color del borde */
+  width: 100%; /* Ajusta el ancho del campo de texto al 100% del contenedor */
+}
+
+.register-rounded-input:focus {
+  border-color: #ff6b6b; /* Color del borde al enfocar el campo de texto */
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.3); /* Sombra al enfocar */
+}
+
+
+.register-button-container {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  margin-top: 5px; /* Espacio entre el formulario y los botones */
+  margin-left: auto;
+}
+
+.register-login-button,
+.register-register-button,
+.register-forgot-password-button {
+  padding: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100%; /* Ajusta el ancho de los botones alrededor del 45% del contenedor */
+  height: 50px;
+  margin-right: 25px;
+}
+
+.register-login-button {
+  background-color: #f9a3a4; /* Color de fondo */
+  color: #fff; /* Color del texto */
+}
+
+.register-register-button {
+  background-color: #f9a3a4; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  width: 100%;
+  height: 55px;
+}
+
+.register-forgot-password-button {
+  color: #ff6b6b; /* Color del texto */
+}
+
+.register-login-button:hover,
+.register-register-button:hover {
+  background-color: #f7cacb; /* Color de fondo al pasar el ratón */
+}
+
+.register-label-title {
+  color: black;
+  font-weight: bold;
+  margin-left: 40%;
+}
