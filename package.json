@@ -3,7 +3,12 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-      "dev": "concurrently \"npm --prefix src/client run start\" \"npm --prefix src/server run server-dev\""
+        "dev": "concurrently \"npm --prefix src/client run start\" \"npm --prefix src/server run server-dev\""
+    },
+    "dependencies": {
+        "pg": "^8.11.3"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
     }
-  }
-  
+}

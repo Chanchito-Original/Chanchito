@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
-const port = 4000; // Puedes cambiar el puerto según tus necesidades
+const authRoutes = require('./routes/auth');
 
-app.get('/', (req, res) => {
-  res.send('Hola, mundo');
-});
+app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`El servidor está corriendo en http://localhost:${port}`);
+// Rutas de autenticación
+app.use('/auth', authRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor en ejecución en el puerto ${PORT}`);
 });
