@@ -1,14 +1,14 @@
-import React from "react";
-import "./css/RegisterPage.css"; // Importa el nuevo CSS para estilos
-import pigLogo from "./img/pig-logo.png"; // Importa la imagen del logo de cerdito
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import "./css/RegisterPage.css";
+import pigLogo from "./img/pig-logo.png";
+import { Link, useNavigate } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 
-// Componente de la página de registro
 function RegisterPage() {
-  // Función de manejo de clic para el botón de registro
-  const handleRegisterClick = () => {
-    // Obtener referencias a los elementos del formulario de registro
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleRegisterClick = async () => {
     const nombreInput = document.getElementById("register-nombre");
     const apellidoInput = document.getElementById("register-apellido");
     const emailInput = document.getElementById("register-email");
@@ -17,27 +17,50 @@ function RegisterPage() {
       "register-confirmPassword"
     );
 
-    // Obtener valores de los campos de entrada
     const nombre = nombreInput.value;
     const apellido = apellidoInput.value;
     const email = emailInput.value;
     const password = passwordInput.value;
     const confirmPassword = confirmPasswordInput.value;
 
-    // Validar si las contraseñas coinciden
     if (password !== confirmPassword) {
-      console.error("Las contraseñas no coinciden");
+      setError("Las contraseñas no coinciden");
       return;
     }
 
-    // Realizar acciones de registro (puedes reemplazar con tu lógica)
-    console.log("Nombre:", nombre);
-    console.log("Apellido:", apellido);
-    console.log("Email:", email);
-    console.log("Contraseña:", password);
+    try {
+      const response = await fetch("http://localhost:5000/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombre,
+          apellido,
+          email,
+          password,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error en la solicitud: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      if (data.success) {
+        console.log("Usuario registrado con éxito");
+        // Redirige al usuario a la página de inicio de sesión después del registro
+        navigate("/");
+      } else {
+        setError(data.message);
+      }
+    } catch (error) {
+      console.error("Error en la solicitud de registro:", error);
+      setError("Error en la solicitud de registro");
+    }
   };
 
-  // Renderizar el componente de la página de registro
   return (
     <section className="register-container">
       <div className="register-logo-container">
@@ -131,6 +154,7 @@ function RegisterPage() {
           </button>
         </div>
       </form>
+      <div className="error-message">{error}</div>
     </section>
   );
 }
