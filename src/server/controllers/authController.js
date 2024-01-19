@@ -1,43 +1,52 @@
+// Registro de usuario
 const pool = require('../config/db');
 
 // Registro de usuario
-const registerUser = async (req, res) => {
+const registerUser = async (req, client) => {
+  let transactionError = null;
+
   try {
-    const { nombre_completo, email, password } = req.body;
+    const {
+      nombre_completo,
+      email,
+      password,
+      telefono,
+      nombre_usuario,
+      genero,
+      pregunta_seguridad,
+      respuesta_seguridad,
+    } = req.body;
 
-    // Hash de la contraseña (usando bcrypt, asegúrate de instalarlo)
-    // const hashedPassword = await bcrypt.hash(password, 10);
+    const rol_id = 1;
 
-    const newUser = await pool.query(
-      'INSERT INTO usuario (nombre_completo, email, password) VALUES ($1, $2, $3) RETURNING *',
-      [nombre_completo, email, password]
+    // Comienza la transacción
+    await client.query('BEGIN');
+
+    // Lógica para registrar un usuario en la base de datos
+    const newUser = await client.query(
+      'INSERT INTO usuario (nombre_completo, email, telefono, password, rol_id, nombre_usuario, genero, pregunta_seguridad, respuesta_seguridad) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
+      [nombre_completo, email, telefono, password, rol_id, nombre_usuario, genero, pregunta_seguridad, respuesta_seguridad]
     );
 
-    res.json(newUser.rows[0]);
+    // Commit de la transacción
+    await client.query('COMMIT');
+
+    // Retorna el nuevo usuario
+    return newUser;
   } catch (error) {
-    console.error(error.message);
-    res.status(500).send('Error de servidor');
+    // Rollback en caso de error
+    await client.query('ROLLBACK');
+    console.error(error);
+    transactionError = 'Error al registrar usuario';
+    throw error; // Re-lanza el error para que se maneje en la ruta
   }
 };
+
 
 // Login de usuario
 const loginUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
-
-    const user = await pool.query('SELECT * FROM usuario WHERE email = $1', [email]);
-
-    if (user.rows.length === 0) {
-      return res.status(401).json('Usuario no encontrado');
-    }
-
-    // Comparar contraseñas (usando bcrypt)
-    // const passwordMatch = await bcrypt.compare(password, user.rows[0].password);
-
-    // if (!passwordMatch) {
-    //   return res.status(401).json('Contraseña incorrecta');
-    // }
-
+    // Lógica de inicio de sesión
     res.json('Login exitoso'); // Puedes devolver un token aquí si lo estás usando
   } catch (error) {
     console.error(error.message);

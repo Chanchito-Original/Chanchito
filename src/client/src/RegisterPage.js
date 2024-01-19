@@ -6,22 +6,21 @@ import { Nav } from "react-bootstrap";
 
 function RegisterPage() {
   const [error, setError] = useState(null);
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [nombreUsuario, setNombreUsuario] = useState("");
+  const [genero, setGenero] = useState("");
+  const [preguntaSeguridad, setPreguntaSeguridad] = useState("");
+  const [respuestaSeguridad, setRespuestaSeguridad] = useState("");
+
   const navigate = useNavigate();
 
   const handleRegisterClick = async () => {
-    const nombreInput = document.getElementById("register-nombre");
-    const apellidoInput = document.getElementById("register-apellido");
-    const emailInput = document.getElementById("register-email");
-    const passwordInput = document.getElementById("register-password");
-    const confirmPasswordInput = document.getElementById(
-      "register-confirmPassword"
-    );
-
-    const nombre = nombreInput.value;
-    const apellido = apellidoInput.value;
-    const email = emailInput.value;
-    const password = passwordInput.value;
-    const confirmPassword = confirmPasswordInput.value;
+    const nombreCompleto = `${nombre} ${apellido}`;
 
     if (password !== confirmPassword) {
       setError("Las contraseñas no coinciden");
@@ -35,10 +34,14 @@ function RegisterPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          nombre,
-          apellido,
+          nombre_completo: nombreCompleto,
           email,
           password,
+          telefono,
+          nombre_usuario: nombreUsuario,
+          genero,
+          pregunta_seguridad: preguntaSeguridad,
+          respuesta_seguridad: respuestaSeguridad,
         }),
       });
 
@@ -50,7 +53,6 @@ function RegisterPage() {
 
       if (data.success) {
         console.log("Usuario registrado con éxito");
-        // Redirige al usuario a la página de inicio de sesión después del registro
         navigate("/");
       } else {
         setError(data.message);
@@ -71,7 +73,7 @@ function RegisterPage() {
           <p className="register-label-title">Registro</p>
         </div>
 
-        {/* Nombre input */}
+        {/* Nombre y Apellido input */}
         <div className="form-group">
           <label htmlFor="register-nombre" className="register-label">
             Nombre
@@ -81,10 +83,11 @@ function RegisterPage() {
             id="register-nombre"
             className="register-rounded-input"
             placeholder="Nombre"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
           />
         </div>
 
-        {/* Apellido input */}
         <div className="form-group">
           <label htmlFor="register-apellido" className="register-label">
             Apellido
@@ -94,6 +97,8 @@ function RegisterPage() {
             id="register-apellido"
             className="register-rounded-input"
             placeholder="Apellido"
+            value={apellido}
+            onChange={(e) => setApellido(e.target.value)}
           />
         </div>
 
@@ -107,6 +112,8 @@ function RegisterPage() {
             id="register-email"
             className="register-rounded-input"
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -120,6 +127,8 @@ function RegisterPage() {
             id="register-password"
             className="register-rounded-input"
             placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
@@ -133,6 +142,88 @@ function RegisterPage() {
             id="register-confirmPassword"
             className="register-rounded-input"
             placeholder="Confirmar Contraseña"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+
+        {/* Nuevos campos */}
+        <div className="form-group">
+          <label htmlFor="register-telefono" className="register-label">
+            Teléfono
+          </label>
+          <input
+            type="text"
+            id="register-telefono"
+            className="register-rounded-input"
+            placeholder="Teléfono"
+            value={telefono}
+            onChange={(e) => setTelefono(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="register-nombreUsuario" className="register-label">
+            Nombre de Usuario
+          </label>
+          <input
+            type="text"
+            id="register-nombreUsuario"
+            className="register-rounded-input"
+            placeholder="Nombre de Usuario"
+            value={nombreUsuario}
+            onChange={(e) => setNombreUsuario(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="register-genero" className="register-label">
+            Género
+          </label>
+          <select
+            id="register-genero"
+            className="register-rounded-input"
+            value={genero}
+            onChange={(e) => setGenero(e.target.value)}
+          >
+            <option value="">Seleccionar Género</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="register-preguntaSeguridad" className="register-label">
+            Pregunta de Seguridad
+          </label>
+          <select
+            id="register-preguntaSeguridad"
+            className="register-rounded-input"
+            value={preguntaSeguridad}
+            onChange={(e) => setPreguntaSeguridad(e.target.value)}
+          >
+            <option value="">Seleccionar Pregunta</option>
+            <option value="¿Cuál es el nombre de tu primera mascota?">
+              ¿Cuál es el nombre de tu primera mascota?
+            </option>
+            <option value="¿En qué ciudad naciste?">¿En qué ciudad naciste?</option>
+            <option value="¿Cuál es tu comida favorita?">
+              ¿Cuál es tu comida favorita?
+            </option>
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="register-respuestaSeguridad" className="register-label">
+            Respuesta de Seguridad
+          </label>
+          <input
+            type="text"
+            id="register-respuestaSeguridad"
+            className="register-rounded-input"
+            placeholder="Respuesta de Seguridad"
+            value={respuestaSeguridad}
+            onChange={(e) => setRespuestaSeguridad(e.target.value)}
           />
         </div>
 
@@ -149,7 +240,7 @@ function RegisterPage() {
           {/* Botón de inicio de sesión */}
           <button type="button" className="register-register-button">
             <Nav.Link as={Link} to="/">
-              Iniciar Sesion
+              Iniciar Sesión
             </Nav.Link>
           </button>
         </div>

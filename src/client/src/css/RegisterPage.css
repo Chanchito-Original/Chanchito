@@ -14,11 +14,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 120vh;
+  min-height: 100vh; /* Cambiado a altura mínima para ajustarse al contenido */
   background-color: #f5e1da; /* Color de fondo pastel agradable */
   animation: fadeInDown 1s ease-in-out; /* Aplica la animación fadeInDown */
 }
-
 
 .register-logo {
   width: 150px; /* Ajusta el tamaño del logo según tu preferencia */
@@ -29,9 +28,9 @@
 .register-form-container {
   display: flex;
   flex-direction: column;
-  align-items: auto;
+  align-items: center; /* Alinea el formulario al centro */
   background-color: #fff; /* Fondo blanco del formulario */
-  padding: 30px; /* Reducido el padding para un aspecto más compacto */
+  padding: 30px; /* Aumenta el padding para un aspecto más espacioso */
   border-radius: 20px; /* Borde redondeado del formulario */
   max-width: 400px; /* Ajustado el ancho máximo del formulario */
   width: 80%; /* Ajusta el ancho del formulario */
@@ -44,7 +43,7 @@
 }
 
 .register-rounded-input {
-  margin-bottom: 20px; /* Aumentada la separación entre campos de texto */
+  margin-bottom: 15px; /* Reducida la separación entre campos de texto */
   padding: 12px; /* Aumentado el padding para un aspecto más cómodo */
   border: 1px solid #ccc; /* Borde del campo de texto */
   border-radius: 25px; /* Campo de texto más redondo */
@@ -57,24 +56,21 @@
   box-shadow: 0 0 10px rgba(255, 107, 107, 0.3); /* Sombra al enfocar */
 }
 
-
 .register-button-container {
   display: flex;
-  justify-content: center; /* Centra los botones horizontalmente */
-  margin-top: 5px; /* Espacio entre el formulario y los botones */
-  margin-left: auto;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas más pequeñas */
+  justify-content: space-between; /* Espacio uniforme entre los botones */
+  margin-top: 15px; /* Aumentado el espacio entre el formulario y los botones */
 }
 
 .register-login-button,
 .register-register-button,
 .register-forgot-password-button {
-  padding: 5px;
+  flex-basis: 100%; /* Ancho del 100% para ocupar toda la línea */
+  padding: 10px; /* Aumentado el padding para un aspecto más cómodo */
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  width: 100%; /* Ajusta el ancho de los botones alrededor del 45% del contenedor */
-  height: 50px;
-  margin-right: 25px;
 }
 
 .register-login-button {
@@ -85,8 +81,6 @@
 .register-register-button {
   background-color: #f9a3a4; /* Color de fondo */
   color: #fff; /* Color del texto */
-  width: 100%;
-  height: 55px;
 }
 
 .register-forgot-password-button {
@@ -101,5 +95,6 @@
 .register-label-title {
   color: black;
   font-weight: bold;
-  margin-left: 40%;
+  margin-bottom: 20px; /* Aumentado el espacio inferior para separar el título del formulario */
+  text-align: center; /* Alinea el título al centro */
 }
