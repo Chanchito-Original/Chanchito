@@ -54,7 +54,7 @@ function LocationMarker() {
 
   return position === null ? null : (
     <Marker position={position} icon={customIcon}>
-      <Popup>Tu ubicación actual</Popup>
+      <Popup>Tu ubicación actual.</Popup>
     </Marker>
   );
 }
