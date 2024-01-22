@@ -10,7 +10,8 @@
         "@vercel/postgres": "^0.5.1",
         "cors": "^2.8.5",
         "dotenv": "^16.3.1",
-        "pg": "^8.11.3"
+        "pg": "^8.11.3",
+        "react-scripts": "^5.0.1"
     },
     "devDependencies": {
         "concurrently": "^8.2.2"
