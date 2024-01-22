@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "build": "react-scripts build",
+        "build": "npm --prefix src/client run build && npm --prefix src/server run build",
         "dev": "concurrently \"npm --prefix src/client run start\" \"npm --prefix src/server run server-dev\""
     },
     "dependencies": {
