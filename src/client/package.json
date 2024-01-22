@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precache": "workbox generateW"
+    "precache": "workbox generateW",
+    "server-dev": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
