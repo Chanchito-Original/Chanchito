@@ -4,7 +4,8 @@
     "private": true,
     "scripts": {
         "build": "npm --prefix src/client run build",
-        "dev": "npm --prefix src/client run start"
+        "dev": "npm --prefix src/client run start",
+        "prebuild": "NODE_PATH=./src/client"
     },
     "dependencies": {
         "bootstrap": "^5.3.2",
