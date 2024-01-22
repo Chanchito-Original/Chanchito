@@ -4,10 +4,6 @@
       { "src": "src/client/package.json", "use": "@vercel/static-build" },
       { "src": "src/server/package.json", "use": "@vercel/node" }
     ],
-    "routes": [
-      { "src": "/api/(.*)", "dest": "src/server/$1" },
-      { "src": "/(.*)", "dest": "src/client/$1" }
-    ],
     "env": {
       "DATABASE_URL": "@chanchito-client/DATABASE_URL"
     }
