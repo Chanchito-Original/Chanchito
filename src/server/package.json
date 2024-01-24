@@ -5,7 +5,7 @@
     "scripts": {
         "start": "npm --prefix ../client run start",
         "build": "concurrently \"npm --prefix ../client run build\" \"npm run build-server\"",
-        "build-server": "npm --prefix . run build-server",
+        "build-server": "npm --prefix src/client run build",
         "dev": "npm --prefix ../client run start"
     },
     "dependencies": {
