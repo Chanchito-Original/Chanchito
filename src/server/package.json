@@ -3,9 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-      "start": "npm --prefix src/client run start",
-      "build": "concurrently \"npm --prefix src/client run build\" \"npm --prefix src/server run build\"",
-      "dev": "npm --prefix src/client run start"
+        "start": "npm --prefix ../client run start",
+        "build": "concurrently \"npm --prefix ../client run build\" \"npm run build-server\"",
+        "build-server": "npm --prefix . run build-server",
+        "dev": "npm --prefix ../client run start"
     },
     "dependencies": {
       "@vercel/postgres": "^0.5.1",
@@ -22,9 +23,9 @@
       "web-vitals": "^3.5.1"
     },
     "resolutions": {
-      "react": "^17.0.2",
-      "react-dom": "^17.0.2"
-    },
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+      },
     "devDependencies": {
       "concurrently": "^8.2.2",
       "react-scripts": "^5.0.1"
