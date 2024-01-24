@@ -5,8 +5,7 @@
     "scripts": {
       "start": "npm --prefix src/client run start",
       "build": "concurrently \"npm --prefix src/client run build\" \"npm --prefix src/server run build\"",
-      "dev": "concurrently \"npm --prefix src/client run start\" \"npm --prefix src/server run server-dev\""
-
+      "dev": "npm --prefix src/client run start"
     },
     "dependencies": {
       "@vercel/postgres": "^0.5.1",
