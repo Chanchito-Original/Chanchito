@@ -1,3 +1,4 @@
 [build]
-command = "npm --prefix src/client run build"
-publish = "src/client/build"
+  command = "npm --prefix src/client run build"
+  publish = "/opt/build/repo/src/client/build"
+  functions = "lambda"
