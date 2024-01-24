@@ -1,16 +1,10 @@
 [build]
-  base = "src/client"
-  publish = "build"
   command = "npm run build"
-
-[dev]
-  command = "npm run start"
+  publish = "src/client/build"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
-  package = "@netlify/plugin-react-refresh"
-
-[[plugins]]
-  package = "@netlify/plugin-graphql"
+  package = "netlify-plugin-react-scripts"
+  command = "start"
