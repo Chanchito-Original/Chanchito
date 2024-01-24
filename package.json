@@ -25,6 +25,10 @@
     "devDependencies": {
       "concurrently": "^8.2.2"
     },
+    "resolutions": {
+        "react": "^17.0.2",
+        "react-leaflet": "^4.2.1"
+    },
     "postinstall": "cd src/client && rm -rf node_modules && npm ci"
   }
   
