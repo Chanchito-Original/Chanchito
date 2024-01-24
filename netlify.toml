@@ -1,4 +1,5 @@
 [build]
-  command = "npm --prefix src/client run build"
-  publish = "/opt/build/repo/src/client/build"
-  functions = "lambda"
+  base = "src/client"  # Ruta base para los comandos de construcción
+  command = "npm run build --prefix src/client"  # Comando de construcción
+  publish = "build"  # Directorio de publicación relativo a la ruta base
+  functions = "src/server/lambda"  # Directorio de funciones relativo a la ruta base
