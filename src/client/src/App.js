@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaIcon, FaSearch, FaCog, FaUser } from "react-icons/fa";
-import { BrowserRouter } from 'react-router-dom';
+import { FaSearch, FaCog, FaUser } from "react-icons/fa";
 import pigLogo from "./img/pig-logo.png";
 import { Link } from "react-router-dom";
 import { Carousel, Navbar, Nav, Button } from "react-bootstrap";
