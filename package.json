@@ -25,7 +25,8 @@
     "devDependencies": {
         "concurrently": "^8.2.2"
     },
-    "postinstall": "cd src/client && npm install --legacy-peer-deps"
+    "postinstall": "cd src/client && rm -rf node_modules && npm install"
+
 
 
 }
