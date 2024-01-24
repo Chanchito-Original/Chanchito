@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.001e090c.css",
-    "main.js": "/static/js/main.7ab0eb13.js",
-    "static/js/750.ab60a761.chunk.js": "/static/js/750.ab60a761.chunk.js",
+    "main.css": "/static/css/main.ae16dc41.css",
+    "main.js": "/static/js/main.587b1d46.js",
+    "static/js/77.3d897c08.chunk.js": "/static/js/77.3d897c08.chunk.js",
     "static/media/pig-logo.png": "/static/media/pig-logo.abcda164c41337be200d.png",
     "index.html": "/index.html",
-    "main.001e090c.css.map": "/static/css/main.001e090c.css.map",
-    "main.7ab0eb13.js.map": "/static/js/main.7ab0eb13.js.map",
-    "750.ab60a761.chunk.js.map": "/static/js/750.ab60a761.chunk.js.map"
+    "main.ae16dc41.css.map": "/static/css/main.ae16dc41.css.map",
+    "main.587b1d46.js.map": "/static/js/main.587b1d46.js.map",
+    "77.3d897c08.chunk.js.map": "/static/js/77.3d897c08.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.001e090c.css",
-    "static/js/main.7ab0eb13.js"
+    "static/css/main.ae16dc41.css",
+    "static/js/main.587b1d46.js"
   ]
 }
