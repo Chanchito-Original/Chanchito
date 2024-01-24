@@ -24,5 +24,7 @@
     },
     "devDependencies": {
         "concurrently": "^8.2.2"
-    }
+    },
+    "postinstall": "cd src/client && npm install"
+
 }
