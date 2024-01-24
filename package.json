@@ -3,20 +3,21 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-      "start": "npm --prefix src/client run start",
-      "build": "npm --prefix src/client run build && npm --prefix src/server run build",
-      "dev": "concurrently \"npm --prefix src/client run start\" \"npm --prefix src/server run server-dev\""
+        "build": "npm run build-client && npm run build-server",
+        "build-client": "react-scripts build",
+        "build-server": "npm --prefix src/server run build",
+        "dev": "concurrently \"npm --prefix src/client run start\" \"npm --prefix src/server run server-dev\""
     },
     "dependencies": {
-      "@vercel/postgres": "^0.5.1",
-      "bootstrap": "^5.3.2",
-      "cors": "^2.8.5",
-      "dotenv": "^16.3.1",
-      "pg": "^8.11.3",
-      "react-scripts": "^5.0.1"
+        "@vercel/postgres": "^0.5.1",
+        "bootstrap": "^5.3.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "pg": "^8.11.3",
+        "react-scripts": "^5.0.1"
     },
     "devDependencies": {
-      "concurrently": "^8.2.2"
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+        "concurrently": "^8.2.2"
     }
-  }
-  
+}
