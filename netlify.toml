@@ -1,9 +1,3 @@
 [build]
   command = "npm run build"
   functions = "src/functions"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[[plugins]]
-  package = "netlify-plugin-react-scripts"
