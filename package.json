@@ -4,10 +4,11 @@
     "private": true,
     "scripts": {
       "start": "npm run start-client",
-      "build": "npm --prefix src/client run build && npm --prefix src/server run build-server",
+      "build": "npm run build-all",
       "start-client": "npm --prefix src/client start",
       "build-client": "npm --prefix src/client run build",
-      "build-server": "npm --prefix src/server run build"
+      "build-server": "npm --prefix src/server run build",
+      "build-all": "npm --prefix src/client run build && npm --prefix src/server run build-server"
     },
     "dependencies": {
       "@vercel/postgres": "^0.5.1",
