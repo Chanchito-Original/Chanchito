@@ -3,9 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-      "start": "npm --prefix src/client run start",
-      "build": "concurrently \"npm --prefix src/client run build\" \"npm --prefix src/server run build\"",
-      "dev": "npm --prefix src/client run start"
+      "start": "npm run start-client",
+      "build": "npm run build-client && npm run build-server",
+      "start-client": "npm --prefix src/client start",
+      "build-client": "npm --prefix src/client run build",
+      "build-server": "npm --prefix src/server run build"
     },
     "dependencies": {
       "@vercel/postgres": "^0.5.1",
@@ -24,11 +26,6 @@
     },
     "devDependencies": {
       "concurrently": "^8.2.2"
-    },
-    "resolutions": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-leaflet": "^4.2.1"
     }
   }
   
