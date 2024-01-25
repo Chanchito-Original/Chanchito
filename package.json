@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
       "start": "npm run start-client",
-      "build": "cd src/client && npm run build && cd ../server && npm run build-server",
+      "build": "npm --prefix src/client run build && npm --prefix src/server run build-server",
       "start-client": "npm --prefix src/client start",
       "build-client": "npm --prefix src/client run build",
       "build-server": "npm --prefix src/server run build"
